@@ -1,0 +1,5 @@
+package com.engine.type;
+
+public enum TileState {
+   FILLED, EMPTY, Y_START, Y_END, X_START, X_END, TOP_LEFT_CORNER, TOP_RIGHT_CORNER, BOTTOM_LEFT_CORNER, BOTTOM_RIGHT_CORNER, NOTEND
+}

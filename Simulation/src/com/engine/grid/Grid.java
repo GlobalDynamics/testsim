@@ -91,7 +91,7 @@ public class Grid {
             };
             ActionListener taskPerformer = new ActionListener() {
             	  public void actionPerformed(ActionEvent evt) {
-            		  b.incrementTest();
+            		  b.performNextTurn();
             	    repaint();
             	  }
             	};
@@ -143,10 +143,11 @@ public class Grid {
             {
             	for(StringRectangle cell : cells)
             	{
-            		System.out.println(cell.positionX);
-            		System.out.println(tile.positionX );
+            		//System.out.println(cell.positionX);
+            		//System.out.println(tile.positionX );
             		if(cell.positionX == tile.positionX && cell.positionY == tile.positionY)
             		{
+            			cell.label = String.valueOf(tile.bot.getHealth());
             			
             			gp.updateGrid(g2d, cell, tile);
             		}
@@ -156,8 +157,9 @@ public class Grid {
             {
             	for(StringRectangle cell : cells)
             	{
-            		if(cell.x == tile.positionX && cell.y == tile.positionY)
+            		if(cell.positionX == tile.positionX && cell.positionY == tile.positionY)
             		{
+            			cell.label = String.valueOf(tile.bot.getHealth());
             			gp.updateGrid(g2d, cell, tile);
             		}
             	}
